@@ -6,12 +6,21 @@ pipeline {
         sh 'cat my-project/file.txt'
       }
     }
+
     stage('use dir') {
       steps {
-        dir('my-project') {
+        dir(path: 'my-project') {
           sh 'cat file.txt'
         }
+
       }
     }
+
+    stage('Finito') {
+      steps {
+        echo 'Finito'
+      }
+    }
+
   }
 }
